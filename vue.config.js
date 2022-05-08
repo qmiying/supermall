@@ -5,12 +5,11 @@ module.exports = {
       alias: {
         // 默认的别名src已有设置：'@':'src'
         'assets': '@/assets',
-        'commom': '@/commom',
         'components': '@/components',
-        'network': '@network',
+        'network': '@/network',
         'views': '@/views'
       }
-    }
+    },
 
   }
 }
