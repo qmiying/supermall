@@ -13,6 +13,13 @@ export function getHomeGoods(type, page) {
     params: {
       type,
       page
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5bd52b1 (5-9 home商品请求完成)
+>>>>>>> fdd9d1a (4-9 商品请求完成)
     }
   })
 }
