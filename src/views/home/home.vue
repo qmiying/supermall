@@ -3,15 +3,7 @@
     <!-- navbar -->
     <nav-bar class="home-nav"><template v-slot:center>购物街</template></nav-bar>
     <!-- 为首页固定区域设置滚动 -->
-<<<<<<< HEAD
-    <scroll>
-=======
-<<<<<<< HEAD
-    <scroll>
-=======
     
->>>>>>> 5bd52b1 (5-9 home商品请求完成)
->>>>>>> fdd9d1a (4-9 商品请求完成)
         <!-- 导航栏swiper -->
       <home-swiper :banners='banners'></home-swiper>
       <!-- recomend栏 -->
@@ -24,15 +16,7 @@
         class="tab-control"></tab-control>
       <!-- 从goods中的pop类型数据中取出商品列表赋值到goodslist组件的goods中 -->
       <goods-list :goods="showGoods"/>
-<<<<<<< HEAD
-    </scroll>
-=======
-<<<<<<< HEAD
-    </scroll>
-=======
     
->>>>>>> 5bd52b1 (5-9 home商品请求完成)
->>>>>>> fdd9d1a (4-9 商品请求完成)
       <ul>
         <li>测试用的</li>
         <li>测试用的</li>
@@ -64,10 +48,6 @@
         <li>测试用的</li>
         <li>测试用的</li>
         <li>测试用的</li>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
         <li>测试用的</li>
         <li>测试用的</li>
         <li>测试用的</li>
@@ -98,8 +78,6 @@
         <li>测试用的</li>
         <li>测试用的</li>
         <li>测试用的</li>
->>>>>>> 5bd52b1 (5-9 home商品请求完成)
->>>>>>> fdd9d1a (4-9 商品请求完成)
       </ul>
 
   </div>
@@ -110,31 +88,13 @@
 import NavBar from "components/commom/navbar/NavBar"
 import TabControl from "components/content/tabControl/TabControl"
 import GoodsList from "components/content/goods/GoodsList"
-import Scroll from "components/commom/scroll/Scroll"
-<<<<<<< HEAD
 //import Scroll from "components/commom/scroll/Scroll"
-=======
-<<<<<<< HEAD
-//import Scroll from "components/commom/scroll/Scroll"
-=======
->>>>>>> 5bd52b1 (5-9 home商品请求完成)
->>>>>>> fdd9d1a (4-9 商品请求完成)
 
 // 页面组件导入
 import HomeSwiper from "./childrenComps/HomeSwiper"
 import RecommendView from "./childrenComps/RecommendView"
 import FeatureView from "./childrenComps/FeatureView"
 
-<<<<<<< HEAD
-
-import Scroll from "../../components/commom/scroll/Scroll.vue"
-
-=======
-<<<<<<< HEAD
-
-import Scroll from "../../components/commom/scroll/Scroll.vue"
-
-=======
 import {getHomeMultidata,getHomeGoods} from 'network/home'
 
 export default {
@@ -143,7 +103,7 @@ export default {
 		  NavBar,
       TabControl,
       GoodsList,
-      Scroll,
+      //Scroll,
 
       HomeSwiper,
       RecommendView,
@@ -222,8 +182,6 @@ export default {
       }
     }
 	}
->>>>>>> 5bd52b1 (5-9 home商品请求完成)
->>>>>>> fdd9d1a (4-9 商品请求完成)
 
 
 </script>
