@@ -47,7 +47,7 @@ export default {
   // 设置点击item跳转路由
   methods:{
     itemClick(){
-      console.log("itemClick");
+      console.log("tabbarItemClick");
       // 传入的地址path为各个item的独立设置值
       this.$router.push(this.path)
 

@@ -16,6 +16,7 @@ export default {
     // 传入的tabcontrol标题
     titles:{
       type:Array,
+      // 当默认值是对象或数组时，默认值必须是函数
       default(){
         return []
       }
@@ -31,6 +32,7 @@ export default {
   methods:{
     // 设置点击事件：当前点击选项变色
     itemClick(index){
+      console.log("tabControlitemClick")
       this.currentIndex=index;
       // 向home组件传入事件
       this.$emit('tabclick',index)

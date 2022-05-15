@@ -67,6 +67,6 @@ export default {
   top:-1px;
   width: 14px;
   height: 14px;
-  /* background:url("~assets/img/commom/collect1.svg") ; */
+  background:url("~assets/img/common/collect.svg") ;
 }
 </style>
