@@ -1,7 +1,7 @@
 <template>
   <div class="goods-item">
     <!-- 获取单个商品goodsitem中的数据展示信息 -->
-    <img :src="goodsItem.show.img" alt="">
+    <img :src="goodsItem.show.img" alt="" @load="imageLoad">
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
@@ -23,6 +23,12 @@ export default {
         return {}
       }
     }
+  },
+  methods:{
+    imageLoad(){
+    // 利用事件$bus总线发射图片信息
+     this.bus.emit('itemImageLoad')
+   }
   }
 }
 </script>

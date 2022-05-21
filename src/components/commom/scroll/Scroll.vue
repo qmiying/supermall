@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import Bscroll from 'better-scroll'
+import Bscroll from 'better-scroll';
+//import PullUp from '@better-scroll/pull-up';
 
 export default {
   name: 'Scroll',
@@ -21,6 +22,11 @@ export default {
     probeType:{
       type:Number,
       default:0
+    },
+    // 传出，home.vue中使用
+    pullUpLoad:{
+      type:Boolean,
+      default:false
     }
   },
   mounted(){
@@ -31,14 +37,26 @@ export default {
       click:true,
       // 传入监听方式
       probeType:this.probeType,
+      // 保存是否需要上拉加载更多
       pullUpLoad:this.pullUpLoad
     })
-    // 2.监听滚动位置,'scroll'为正在滚动时触发    
-    this.scroll.on('scroll',(position) => {
-      //console.log(position);
+    
+    // 2.监听滚动位置,'scroll'为正在滚动时触发
+    // 判断当前是否是可滚动状态    
+    if(this.probeType === 2 || this.probeType === 3){
+      this.scroll.on('scroll',(position) => {
+     //console.log(position);
     // 将滚动位置信息传出，在home.vue中使用，谁要使用此传出的事件用@事件名调用
-      this.$emit('scroll', position)
-    })
+        this.$emit('scroll', position)
+      })
+    }
+    // 3.实现加载更多 监听上拉事件
+    if(this.pullUpLoad) {       
+      this.scroll.on('pullingUp',()=>{
+        //当滚动到底部的时候调用。
+        this.$emit('pullingUp')
+      })
+    }
   },
   methods:{
     // 封装滚动到顶部的方法,方便其他页面调用
@@ -48,7 +66,12 @@ export default {
     },
     finishPullUp(){
       // 此finishPullUp()是betterscroll里的
-      this.scroll.finishPullUp()
+      this.scroll && this.scroll.finishPullUp()
+    },
+    // 封装用在图片刷新语句
+    refresh(){
+      // 判断scroll初始化没有，没初始化就不继续下面的代码
+      this.scroll && this.scroll.refresh()
     }
   }
 }
